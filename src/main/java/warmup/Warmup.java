@@ -1,13 +1,13 @@
-/*
-   This file is provided exclusively for the purpose of Spartez Online Assessment.
-   Unauthorized distribution of this file, derived work or information about its
-   content, via any medium, is strictly prohibited.
- */
+
 package warmup;
 
-/**
- * Read only file - please do not change.
- */
+import java.util.function.Predicate;
+
 public interface Warmup {
-    int findMax(int[] array);
+	int findMax(int[] input);
+
+	interface Predicates {
+		Predicate<int[]> checkIfNotNullAndLengthGreaterThan0AndLengthLessThanMaxVal = (input) -> input != null
+				&& input.length > 0 && input.length < Integer.MAX_VALUE / 10;
+	}
 }
